@@ -48,6 +48,9 @@ this.addEventListener('fetch', function(event) {
     // you are able to customize the response from the 
     // request you initially get by the browser.
 
+    // filter other urls, e.g. chrome-extension:// addon urls
+    if (!event.request.url.startsWith('https://') && !event.request.url.startsWith('http://')) return;
+
     event.respondWith(
 
     // caches.open look familiar? It should! We just used 
