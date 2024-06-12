@@ -26,7 +26,6 @@ this.addEventListener('install', function(event) {
                 'index.html',
                 'page_script.js',
                 'style.css',
-                'index.html',
                 '/images/set1.jpg',
                 '/images/set2.jpg',
                 '/images/set3.jpg'
