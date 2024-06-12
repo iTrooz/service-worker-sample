@@ -43,6 +43,7 @@ this.addEventListener('install', function(event) {
 // standpoint!
 
 this.addEventListener('fetch', function(event) {
+    console.log(`fetching ${event.request.url}...`)
     // Full documentation for respondWith is available on 
     // MDN (http://mzl.la/1SKtV92), but basically with this
     // you are able to customize the response from the 
@@ -72,6 +73,7 @@ this.addEventListener('fetch', function(event) {
         caches.open('v1').then(function(cache) {
             return cache.match(event.request).then(function(response) {
                 return response || fetch(event.request).then(function(response) {
+                    console.log(`fetching ${event.request.url} from server...`)
                     cache.put(event.request, response.clone());
                     return response;
                 });
